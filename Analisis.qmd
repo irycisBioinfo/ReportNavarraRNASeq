@@ -1,0 +1,310 @@
+---
+title: "RNASeq Navarra"
+format: html
+editor: visual
+---
+
+```{r}
+library(DESeq2)
+library(tidyverse)
+library(ggrepel)
+library(ggsci)
+```
+
+# Load Data
+
+```{r}
+
+reads_genes <- read_tsv("/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/results_strand/star_salmon/salmon.merged.gene_counts_length_scaled.tsv")
+
+reads_transcripts <- read_tsv("/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/results_strand/star_salmon/salmon.merged.transcript_counts.tsv")
+
+ids <- read_tsv("/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/results_strand/star_salmon/salmon_tx2gene.tsv", col_names = c("Transcrip_ID","Gene_ID","Gene_Name"))
+
+metadata <- read_csv("/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/metadata.csv")
+
+```
+
+```{r}
+mart <- biomaRt::useMart(biomart = "ENSEMBL_MART_ENSEMBL",
+                dataset = "hsapiens_gene_ensembl",
+                host = 'https://www.ensembl.org')
+
+ttg <- biomaRt::getBM(
+  attributes = c("ensembl_transcript_id","ensembl_gene_id","external_gene_name", "description",
+                 "entrezgene_id","gene_biotype","transcript_biotype"),
+  mart = mart)
+```
+
+# Transcript Level
+
+```{r}
+table_sum <- reads_transcripts %>% 
+  pivot_longer(names_to = "Sample", values_to = "counts", -(tx:gene_id)) %>% 
+  group_by(tx,gene_id) %>% 
+  mutate(TotalGeneCounts = sum(counts), 
+         TotalZerosCounts = sum(counts==0))
+  
+table_sum %>% ggplot(aes(x = TotalGeneCounts)) + geom_histogram() + geom_vline(xintercept = 10)+scale_x_log10()
+
+table_counts <- table_sum %>% 
+  ungroup() %>% 
+  filter(TotalGeneCounts > 10) %>% 
+  filter(TotalZerosCounts < 3) %>% 
+  select(tx,Sample,counts) %>% 
+  pivot_wider(names_from = Sample, values_from = counts, values_fill = 0) %>% 
+  column_to_rownames("tx") %>% 
+  round() %>% 
+  as.matrix()
+
+```
+
+```{r}
+dds_transcript <-DESeqDataSetFromMatrix(countData = table_counts, 
+                                   colData = metadata %>% column_to_rownames("Sample"), 
+                                   design = ~Grupo) 
+
+dds_transcript <- DESeq(dds_transcript,sfType = "poscounts", fitType = "mean")
+```
+
+## Quality Control
+
+```{r}
+reads_transcripts %>% pivot_longer(names_to = "Sample", values_to = "counts", -(tx:gene_id)) %>% 
+  group_by(Sample) %>% 
+  summarise(TotalCounts = sum(counts)) %>% 
+  full_join(metadata) %>% 
+  ggplot(aes(x= Sample, y = TotalCounts, fill = Grupo)) + geom_col() + coord_flip() + theme_light()+ labs(title = "Raw Data")
+
+```
+
+```{r}
+counts(dds_transcript, normalized = T) %>% as_tibble(rownames = "tx") %>% pivot_longer(names_to = "Sample", values_to = "counts", -tx) %>% 
+  group_by(Sample) %>% 
+  summarise(TotalCounts = sum(counts)) %>% 
+  full_join(metadata) %>% 
+  ggplot(aes(x= Sample, y = TotalCounts, fill = Grupo)) + geom_col() + coord_flip() + theme_light() + labs(title = "Normalize Data")
+```
+
+```{r}
+
+mds <- vegan::metaMDS(counts(dds_transcript, normalized = T) %>% t())
+
+mds$points %>% 
+  as.data.frame() %>% 
+  rownames_to_column("Sample") %>% 
+  inner_join(metadata) %>% 
+  ggplot(aes(x = MDS1, y = MDS2, fill = Grupo, label =Sample)) + geom_label() +
+  theme_light()
+
+```
+
+## Differential Expression Test
+
+```{r}
+resultsNames(dds_transcript)
+
+de_test <- results(dds_transcript) %>% 
+  as_tibble(rownames = "Transcrip_ID") %>% inner_join(ids)
+  
+de_test%>% 
+  mutate(sig = ifelse(padj < 0.005,"Significative","No-Significative")) %>%
+  mutate(label = ifelse(sig == "Significative",Gene_Name,NA)) %>% 
+  ggplot(aes(x= log2FoldChange, 
+             y = -log10(padj), 
+             color = sig, 
+             size = sqrt(baseMean), 
+             label = label)) +
+  geom_point(alpha = 0.5) +
+  geom_text_repel(size = 1)+
+  scale_color_d3() +
+  theme_light() + 
+  labs(title = "Volcano Plot Grupo_X_vs_P") 
+
+
+de_test%>% 
+  mutate(sig = ifelse(padj < 0.005,"Significative","No-Significative")) %>%
+  mutate(label = ifelse(sig == "Significative",Gene_Name,NA)) %>% 
+  ggplot(aes(x= baseMean, 
+             y = log2FoldChange, 
+             color = sig, 
+             size = sqrt(baseMean), 
+             label = label)) +
+  geom_point(alpha = 0.5) +
+  geom_text_repel(size = 1)+
+  scale_color_d3() +
+  scale_x_log10()+
+  theme_light() + 
+  labs(title = "MA Plot Grupo_X_vs_P")
+```
+
+```{r fig.width=20, fig.height=20}
+significativos <- de_test%>% 
+  filter(padj < 0.005) %>% pull(Transcrip_ID)
+
+counts(dds_transcript, normalized = T) %>% 
+  as.data.frame() %>% 
+  rownames_to_column("tx") %>% 
+  filter(tx %in% significativos) %>% 
+  pivot_longer(names_to = "Sample",values_to = "counts", -tx) %>% 
+  inner_join(metadata) %>% 
+  ggplot(aes(x = Grupo, y = counts, fill = Grupo)) + geom_boxplot() + facet_wrap(~tx, scales = "free_y") + scale_fill_d3() + theme_light()
+```
+
+## Funtional Annotation
+
+```{r}
+library(clusterProfiler)
+library(org.Hs.eg.db)
+```
+
+```{r}
+sig_transcripts <- de_test %>% 
+  inner_join(ttg, by = c("Transcrip_ID" = "ensembl_transcript_id")) %>% filter(padj < 0.005) %>% 
+  dplyr::select(entrezgene_id) %>% 
+    distinct() %>% 
+    drop_na() %>%  
+    pull(entrezgene_id)
+  
+GO_enrichment <- enrichGO(gene =sig_transcripts,
+                                   OrgDb         = org.Hs.eg.db,
+                                    ont           = "ALL",
+                                    pAdjustMethod = "BH",
+                                    pvalueCutoff  = 0.01,
+                                    qvalueCutoff  = 0.05,
+                                    readable      = TRUE)
+
+if ((GO_enrichment %>% as.data.frame() %>% nrow()) > 0  )
+{
+  barplot(GO_enrichment, showCategory = 20)
+} else{
+  print("No enriched Pathways")
+}
+
+
+KEGG_enrichment <- enrichKEGG(gene = sig_transcripts,
+                                        organism     = 'hsa',
+                                        pvalueCutoff = 0.05)
+
+if ((KEGG_enrichment %>% as.data.frame() %>% nrow()) > 0  )
+{
+  barplot(KEGG_enrichment, showCategory = 20)
+} else{
+  print("No enriched Pathways")
+}
+```
+
+# Gene Level
+
+```{r}
+table_sum <- reads_genes %>% 
+  pivot_longer(names_to = "Sample", values_to = "counts", -(gene_id:gene_name)) %>% 
+  group_by(gene_id) %>% 
+  mutate(TotalGeneCounts = sum(counts), 
+         TotalZerosCounts = sum(counts==0))
+  
+table_sum %>% ggplot(aes(x = TotalGeneCounts)) + geom_histogram() + geom_vline(xintercept = 10)+scale_x_log10()
+
+table_counts <- table_sum %>% 
+  ungroup() %>% 
+  filter(TotalGeneCounts > 10) %>% 
+  filter(TotalZerosCounts < 3) %>% 
+  dplyr::select(gene_id,Sample,counts) %>% 
+  pivot_wider(names_from = Sample, values_from = counts, values_fill = 0) %>% 
+  column_to_rownames("gene_id") %>% 
+  round() %>% 
+  as.matrix()
+
+```
+
+```{r}
+dds_genes <-DESeqDataSetFromMatrix(countData = table_counts, 
+                                   colData = metadata %>% column_to_rownames("Sample"), 
+                                   design = ~Grupo) 
+
+dds_genes <- DESeq(dds_genes,sfType = "poscounts", fitType = "mean")
+```
+
+## Quality Control
+
+```{r}
+reads_genes %>% pivot_longer(names_to = "Sample", values_to = "counts", -(gene_id:gene_name)) %>% 
+  group_by(Sample) %>% 
+  summarise(TotalCounts = sum(counts)) %>% 
+  full_join(metadata) %>% 
+  ggplot(aes(x= Sample, y = TotalCounts, fill = Grupo)) + geom_col() + coord_flip() + theme_light()+ labs(title = "Raw Data")
+
+```
+
+```{r}
+counts(dds_genes, normalized = T) %>% as_tibble(rownames = "genes_id") %>% pivot_longer(names_to = "Sample", values_to = "counts", -genes_id) %>% 
+  group_by(Sample) %>% 
+  summarise(TotalCounts = sum(counts)) %>% 
+  full_join(metadata) %>% 
+  ggplot(aes(x= Sample, y = TotalCounts, fill = Grupo)) + geom_col() + coord_flip() + theme_light() + labs(title = "Normalize Data")
+```
+
+```{r}
+
+pca <- vegan::metaMDS(counts(dds_genes, normalized = T) %>% t())
+
+pca$points %>% 
+  as.data.frame() %>% 
+  rownames_to_column("Sample") %>% 
+  inner_join(metadata) %>% 
+  ggplot(aes(x = MDS1, y = MDS2, fill = Grupo, label =Sample)) + geom_label() +
+  theme_light()
+
+```
+
+## Differential Expression Test
+
+```{r}
+resultsNames(dds_genes)
+
+de_test <- results(dds_genes) %>% 
+  as_tibble(rownames = "Gene_ID") %>% inner_join(ids)
+  
+de_test%>% 
+  mutate(sig = ifelse(padj < 0.01,"Significative","No-Significative")) %>%
+  mutate(label = ifelse(sig == "Significative",Gene_Name,NA)) %>% 
+  ggplot(aes(x= log2FoldChange, 
+             y = -log10(padj), 
+             color = sig, 
+             size = sqrt(baseMean), 
+             label = label)) +
+  geom_point(alpha = 0.5) +
+  geom_text_repel(size = 1)+
+  scale_color_d3() +
+  theme_light() + 
+  labs(title = "Volcano Plot Grupo_X_vs_P") 
+
+
+de_test%>% 
+  mutate(sig = ifelse(padj < 0.01,"Significative","No-Significative")) %>%
+  mutate(label = ifelse(sig == "Significative",Gene_Name,NA)) %>% 
+  ggplot(aes(x= baseMean, 
+             y = log2FoldChange, 
+             color = sig, 
+             size = sqrt(baseMean), 
+             label = label)) +
+  geom_point(alpha = 0.5) +
+  geom_text_repel(size = 1)+
+  scale_color_d3() +
+  scale_x_log10()+
+  theme_light() + 
+  labs(title = "MA Plot Grupo_X_vs_P")
+```
+
+```{r }
+significativos <- de_test%>% 
+  filter(padj < 0.01) %>% pull(Gene_Name)
+
+counts(dds_genes, normalized = T) %>% 
+  as.data.frame() %>% 
+  rownames_to_column("Gene_Name") %>% 
+  filter( Gene_Name %in% significativos) %>% 
+  pivot_longer(names_to = "Sample",values_to = "counts", -Gene_Name) %>% 
+  inner_join(metadata) %>% 
+  ggplot(aes(x = Grupo, y = counts, fill = Grupo)) + geom_boxplot() + facet_wrap(~Gene_Name, scales = "free_y") + scale_fill_d3() + theme_light()
+```

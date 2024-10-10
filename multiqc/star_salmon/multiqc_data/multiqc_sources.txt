@@ -1,0 +1,103 @@
+Module	Section	Sample Name	Source
+Picard	DuplicationMetrics	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/picard/markduplicates/1O.markdup.sorted.MarkDuplicates.metrics.txt
+Picard	DuplicationMetrics	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/picard/markduplicates/P11_1.markdup.sorted.MarkDuplicates.metrics.txt
+Picard	DuplicationMetrics	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/picard/markduplicates/P11_3.markdup.sorted.MarkDuplicates.metrics.txt
+Picard	DuplicationMetrics	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/picard/markduplicates/P11_2.markdup.sorted.MarkDuplicates.metrics.txt
+Picard	DuplicationMetrics	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/picard/markduplicates/3O.markdup.sorted.MarkDuplicates.metrics.txt
+Picard	DuplicationMetrics	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/picard/markduplicates/2O.markdup.sorted.MarkDuplicates.metrics.txt
+Preseq	all_sections	P11_3.lc_extrap	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/preseq/P11_3.lc_extrap.txt
+Preseq	all_sections	P11_2.lc_extrap	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/preseq/P11_2.lc_extrap.txt
+Preseq	all_sections	1O.lc_extrap	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/preseq/1O.lc_extrap.txt
+Preseq	all_sections	3O.lc_extrap	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/preseq/3O.lc_extrap.txt
+Preseq	all_sections	P11_1.lc_extrap	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/preseq/P11_1.lc_extrap.txt
+Preseq	all_sections	2O.lc_extrap	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/preseq/2O.lc_extrap.txt
+QualiMap	rna_genome_results	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/qualimap/2O/rnaseq_qc_results.txt
+QualiMap	rna_genome_results	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/qualimap/P11_3/rnaseq_qc_results.txt
+QualiMap	rna_genome_results	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/qualimap/3O/rnaseq_qc_results.txt
+QualiMap	rna_genome_results	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/qualimap/P11_1/rnaseq_qc_results.txt
+QualiMap	rna_genome_results	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/qualimap/P11_2/rnaseq_qc_results.txt
+QualiMap	rna_genome_results	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/qualimap/1O/rnaseq_qc_results.txt
+QualiMap	rna_coverage_histogram	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/qualimap/2O/raw_data_qualimapReport/coverage_profile_along_genes_(total).txt
+QualiMap	rna_coverage_histogram	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/qualimap/P11_3/raw_data_qualimapReport/coverage_profile_along_genes_(total).txt
+QualiMap	rna_coverage_histogram	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/qualimap/3O/raw_data_qualimapReport/coverage_profile_along_genes_(total).txt
+QualiMap	rna_coverage_histogram	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/qualimap/P11_1/raw_data_qualimapReport/coverage_profile_along_genes_(total).txt
+QualiMap	rna_coverage_histogram	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/qualimap/P11_2/raw_data_qualimapReport/coverage_profile_along_genes_(total).txt
+QualiMap	rna_coverage_histogram	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/qualimap/1O/raw_data_qualimapReport/coverage_profile_along_genes_(total).txt
+RSeQC	read_distribution	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/read_distribution/P11_3.read_distribution.txt
+RSeQC	read_distribution	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/read_distribution/2O.read_distribution.txt
+RSeQC	read_distribution	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/read_distribution/1O.read_distribution.txt
+RSeQC	read_distribution	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/read_distribution/P11_2.read_distribution.txt
+RSeQC	read_distribution	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/read_distribution/P11_1.read_distribution.txt
+RSeQC	read_distribution	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/read_distribution/3O.read_distribution.txt
+RSeQC	read_duplication	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/read_duplication/1O.pos.DupRate.xls
+RSeQC	read_duplication	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/read_duplication/2O.pos.DupRate.xls
+RSeQC	read_duplication	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/read_duplication/P11_3.pos.DupRate.xls
+RSeQC	read_duplication	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/read_duplication/P11_1.pos.DupRate.xls
+RSeQC	read_duplication	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/read_duplication/P11_2.pos.DupRate.xls
+RSeQC	read_duplication	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/read_duplication/3O.pos.DupRate.xls
+RSeQC	junction_annotation	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/junction_annotation/P11_3.junction_annotation.log
+RSeQC	junction_annotation	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/junction_annotation/1O.junction_annotation.log
+RSeQC	junction_annotation	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/junction_annotation/P11_2.junction_annotation.log
+RSeQC	junction_annotation	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/junction_annotation/P11_1.junction_annotation.log
+RSeQC	junction_annotation	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/junction_annotation/2O.junction_annotation.log
+RSeQC	junction_annotation	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/junction_annotation/3O.junction_annotation.log
+RSeQC	junction_saturation	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/junction_saturation/P11_1.junctionSaturation_plot.r
+RSeQC	junction_saturation	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/junction_saturation/1O.junctionSaturation_plot.r
+RSeQC	junction_saturation	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/junction_saturation/P11_3.junctionSaturation_plot.r
+RSeQC	junction_saturation	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/junction_saturation/3O.junctionSaturation_plot.r
+RSeQC	junction_saturation	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/junction_saturation/P11_2.junctionSaturation_plot.r
+RSeQC	junction_saturation	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/junction_saturation/2O.junctionSaturation_plot.r
+RSeQC	infer_experiment	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/infer_experiment/2O.infer_experiment.txt
+RSeQC	infer_experiment	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/infer_experiment/P11_3.infer_experiment.txt
+RSeQC	infer_experiment	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/infer_experiment/P11_2.infer_experiment.txt
+RSeQC	infer_experiment	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/infer_experiment/3O.infer_experiment.txt
+RSeQC	infer_experiment	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/infer_experiment/P11_1.infer_experiment.txt
+RSeQC	infer_experiment	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/infer_experiment/1O.infer_experiment.txt
+RSeQC	bam_stat	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/bam_stat/3O.bam_stat.txt
+RSeQC	bam_stat	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/bam_stat/P11_2.bam_stat.txt
+RSeQC	bam_stat	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/bam_stat/1O.bam_stat.txt
+RSeQC	bam_stat	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/bam_stat/P11_3.bam_stat.txt
+RSeQC	bam_stat	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/bam_stat/P11_1.bam_stat.txt
+RSeQC	bam_stat	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/rseqc/bam_stat/2O.bam_stat.txt
+Samtools	stats	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/stats/P11_2.markdup.sorted.bam.stats
+Samtools	stats	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/stats/3O.markdup.sorted.bam.stats
+Samtools	stats	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/stats/2O.markdup.sorted.bam.stats
+Samtools	stats	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/stats/1O.markdup.sorted.bam.stats
+Samtools	stats	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/stats/P11_3.markdup.sorted.bam.stats
+Samtools	stats	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/stats/P11_1.markdup.sorted.bam.stats
+Samtools	flagstat	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/flagstat/2O.markdup.sorted.bam.flagstat
+Samtools	flagstat	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/flagstat/1O.markdup.sorted.bam.flagstat
+Samtools	flagstat	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/flagstat/P11_2.markdup.sorted.bam.flagstat
+Samtools	flagstat	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/flagstat/3O.markdup.sorted.bam.flagstat
+Samtools	flagstat	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/flagstat/P11_1.markdup.sorted.bam.flagstat
+Samtools	flagstat	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/flagstat/P11_3.markdup.sorted.bam.flagstat
+Samtools	idxstats	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/idxstats/P11_1.markdup.sorted.bam.idxstats
+Samtools	idxstats	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/idxstats/P11_3.markdup.sorted.bam.idxstats
+Samtools	idxstats	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/idxstats/3O.markdup.sorted.bam.idxstats
+Samtools	idxstats	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/idxstats/2O.markdup.sorted.bam.idxstats
+Samtools	idxstats	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/idxstats/1O.markdup.sorted.bam.idxstats
+Samtools	idxstats	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/samtools/idxstats/P11_2.markdup.sorted.bam.idxstats
+STAR	SummaryLog	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/star/2O.Log.final.out
+STAR	SummaryLog	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/star/P11_3.Log.final.out
+STAR	SummaryLog	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/star/3O.Log.final.out
+STAR	SummaryLog	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/star/1O.Log.final.out
+STAR	SummaryLog	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/star/P11_1.Log.final.out
+STAR	SummaryLog	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/star/P11_2.Log.final.out
+FastQC (raw)	all_sections	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/fastqc/3O_fastqc.zip
+FastQC (raw)	all_sections	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/fastqc/P11_3_fastqc.zip
+FastQC (raw)	all_sections	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/fastqc/P11_2_fastqc.zip
+FastQC (raw)	all_sections	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/fastqc/2O_fastqc.zip
+FastQC (raw)	all_sections	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/fastqc/P11_1_fastqc.zip
+FastQC (raw)	all_sections	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/fastqc/1O_fastqc.zip
+Cutadapt	all_sections	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/trimgalore/3O.fastq.gz_trimming_report.txt
+Cutadapt	all_sections	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/trimgalore/2O.fastq.gz_trimming_report.txt
+Cutadapt	all_sections	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/trimgalore/1O.fastq.gz_trimming_report.txt
+Cutadapt	all_sections	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/trimgalore/P11_2.fastq.gz_trimming_report.txt
+Cutadapt	all_sections	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/trimgalore/P11_3.fastq.gz_trimming_report.txt
+Cutadapt	all_sections	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/trimgalore/P11_1.fastq.gz_trimming_report.txt
+FastQC (trimmed)	all_sections	P11_1	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/trimgalore/fastqc/P11_1_trimmed_fastqc.zip
+FastQC (trimmed)	all_sections	1O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/trimgalore/fastqc/1O_trimmed_fastqc.zip
+FastQC (trimmed)	all_sections	P11_3	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/trimgalore/fastqc/P11_3_trimmed_fastqc.zip
+FastQC (trimmed)	all_sections	3O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/trimgalore/fastqc/3O_trimmed_fastqc.zip
+FastQC (trimmed)	all_sections	P11_2	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/trimgalore/fastqc/P11_2_trimmed_fastqc.zip
+FastQC (trimmed)	all_sections	2O	/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/work/84/f11fc86625b2d7ce09c9127f971176/trimgalore/fastqc/2O_trimmed_fastqc.zip
