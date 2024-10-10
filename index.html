@@ -94,6 +94,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="rnaseq-report" class="level1">
+<h1>RNASeq Report</h1>
+<p>All the data of this analysis can be found in !(https://github.com/irycisBioinfo/ReportNavarraRNASeq)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DESeq2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -234,6 +237,7 @@ Adjuntando el paquete: 'Biobase'</code></pre>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggsci)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
 <section id="load-data" class="level1">
 <h1>Load Data</h1>
 <div class="cell">
@@ -389,48 +393,48 @@ design formula are characters, converting to factors</code></pre>
 <pre><code>Square root transformation
 Wisconsin double standardization
 Run 0 stress 0 
-Run 1 stress 2.971957e-06 
-... Procrustes: rmse 0.05577078  max resid 0.07670693 
+Run 1 stress 0 
+... Procrustes: rmse 0.1108175  max resid 0.1860917 
 Run 2 stress 0 
-... Procrustes: rmse 0.103102  max resid 0.145558 
-Run 3 stress 1.442675e-06 
-... Procrustes: rmse 0.0403  max resid 0.05782761 
+... Procrustes: rmse 0.1356621  max resid 0.1692757 
+Run 3 stress 0 
+... Procrustes: rmse 0.04359694  max resid 0.0606364 
 Run 4 stress 0 
-... Procrustes: rmse 0.08001201  max resid 0.1025886 
-Run 5 stress 0 
-... Procrustes: rmse 0.09019666  max resid 0.1214262 
+... Procrustes: rmse 0.1207311  max resid 0.2186946 
+Run 5 stress 8.945418e-05 
+... Procrustes: rmse 0.09424843  max resid 0.1176287 
 Run 6 stress 0 
-... Procrustes: rmse 0.07542009  max resid 0.1262511 
-Run 7 stress 8.04948e-05 
-... Procrustes: rmse 0.2327277  max resid 0.4824969 
+... Procrustes: rmse 0.08787099  max resid 0.1507089 
+Run 7 stress 9.724341e-05 
+... Procrustes: rmse 0.07622908  max resid 0.1087503 
 Run 8 stress 0 
-... Procrustes: rmse 0.2304151  max resid 0.4823405 
-Run 9 stress 7.215224e-05 
-... Procrustes: rmse 0.2113833  max resid 0.3949361 
+... Procrustes: rmse 0.1304832  max resid 0.2408138 
+Run 9 stress 8.83889e-05 
+... Procrustes: rmse 0.2088338  max resid 0.4135797 
 Run 10 stress 0 
-... Procrustes: rmse 0.1237072  max resid 0.2273173 
+... Procrustes: rmse 0.02595927  max resid 0.04222413 
 Run 11 stress 0 
-... Procrustes: rmse 0.06061705  max resid 0.09277751 
-Run 12 stress 0 
-... Procrustes: rmse 0.1464745  max resid 0.2910101 
+... Procrustes: rmse 0.03999584  max resid 0.05092603 
+Run 12 stress 8.614669e-05 
+... Procrustes: rmse 0.2208293  max resid 0.4449926 
 Run 13 stress 0 
-... Procrustes: rmse 0.1087108  max resid 0.216004 
-Run 14 stress 0 
-... Procrustes: rmse 0.04305407  max resid 0.07314848 
-Run 15 stress 0 
-... Procrustes: rmse 0.1896212  max resid 0.3825316 
-Run 16 stress 0 
-... Procrustes: rmse 0.05764604  max resid 0.08114745 
-Run 17 stress 0 
-... Procrustes: rmse 0.1454017  max resid 0.2944788 
-Run 18 stress 0.2761337 
-Run 19 stress 8.390311e-05 
-... Procrustes: rmse 0.2090486  max resid 0.3310469 
-Run 20 stress 0 
-... Procrustes: rmse 0.08217613  max resid 0.1212318 
+... Procrustes: rmse 0.03786088  max resid 0.07064924 
+Run 14 stress 5.645838e-05 
+... Procrustes: rmse 0.1681995  max resid 0.321639 
+Run 15 stress 9.42519e-05 
+... Procrustes: rmse 0.1826439  max resid 0.2806114 
+Run 16 stress 9.052716e-05 
+... Procrustes: rmse 0.2115271  max resid 0.3960785 
+Run 17 stress 2.126536e-05 
+... Procrustes: rmse 0.1330298  max resid 0.2298839 
+Run 18 stress 9.448357e-05 
+... Procrustes: rmse 0.2101482  max resid 0.3725563 
+Run 19 stress 0 
+... Procrustes: rmse 0.08884164  max resid 0.167338 
+Run 20 stress 9.726836e-05 
+... Procrustes: rmse 0.2101798  max resid 0.3742234 
 *** Best solution was not repeated -- monoMDS stopping criteria:
-    19: stress &lt; smin
-     1: stress ratio &gt; sratmax</code></pre>
+    20: stress &lt; smin</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in vegan::metaMDS(counts(dds_transcript, normalized = T) %&gt;% t()):
@@ -551,10 +555,9 @@ increasing max.overlaps</code></pre>
 
 Please cite:
 
-T Wu, E Hu, S Xu, M Chen, P Guo, Z Dai, T Feng, L Zhou, W Tang, L Zhan,
-X Fu, S Liu, X Bo, and G Yu. clusterProfiler 4.0: A universal
-enrichment tool for interpreting omics data. The Innovation. 2021,
-2(3):100141</code></pre>
+S Xu, E Hu, Y Cai, Z Xie, X Luo, L Zhan, W Tang, Q Wang, B Liu, R Wang,
+W Xie, T Wu, L Xie, G Yu. Using clusterProfiler to characterize
+multiomics data. Nature Protocols. 2024, doi:10.1038/s41596-024-01020-z</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
@@ -746,44 +749,47 @@ design formula are characters, converting to factors</code></pre>
 <pre><code>Square root transformation
 Wisconsin double standardization
 Run 0 stress 3.011127e-06 
-Run 1 stress 0.0006701483 
-Run 2 stress 8.252688e-05 
-... Procrustes: rmse 0.08889811  max resid 0.1406164 
-Run 3 stress 0.276134 
-Run 4 stress 9.548146e-05 
-... Procrustes: rmse 0.2515066  max resid 0.3560344 
-Run 5 stress 0.0006354846 
-Run 6 stress 9.674977e-05 
-... Procrustes: rmse 0.08626981  max resid 0.1387906 
-Run 7 stress 0.0002570494 
-... Procrustes: rmse 0.05398504  max resid 0.08282076 
-Run 8 stress 0.0001136207 
-... Procrustes: rmse 0.1046076  max resid 0.1654011 
-Run 9 stress 4.318122e-05 
-... Procrustes: rmse 0.1085516  max resid 0.1355157 
-Run 10 stress 0.001174089 
-Run 11 stress 9.433795e-05 
-... Procrustes: rmse 0.04811496  max resid 0.06984204 
-Run 12 stress 5.177311e-05 
-... Procrustes: rmse 0.2720011  max resid 0.4592934 
-Run 13 stress 9.21043e-05 
-... Procrustes: rmse 0.2147983  max resid 0.3385817 
-Run 14 stress 0.0001542118 
-... Procrustes: rmse 0.2708403  max resid 0.4570636 
-Run 15 stress 9.031009e-05 
-... Procrustes: rmse 0.08775665  max resid 0.1752324 
-Run 16 stress 0.0005998885 
-Run 17 stress 7.371075e-05 
-... Procrustes: rmse 0.1073251  max resid 0.2222904 
-Run 18 stress 0.2761337 
-Run 19 stress 9.915057e-05 
-... Procrustes: rmse 0.1288368  max resid 0.2445312 
-Run 20 stress 9.463147e-05 
-... Procrustes: rmse 0.03482423  max resid 0.05210464 
+Run 1 stress 9.951677e-05 
+... Procrustes: rmse 0.05733086  max resid 0.07237598 
+Run 2 stress 9.631749e-05 
+... Procrustes: rmse 0.1844333  max resid 0.298856 
+Run 3 stress 0.0001570931 
+... Procrustes: rmse 0.2745601  max resid 0.4276428 
+Run 4 stress 9.897194e-05 
+... Procrustes: rmse 0.06611347  max resid 0.1068708 
+Run 5 stress 0.0001124797 
+... Procrustes: rmse 0.103359  max resid 0.1388761 
+Run 6 stress 9.865475e-05 
+... Procrustes: rmse 0.05599918  max resid 0.1040803 
+Run 7 stress 9.174916e-05 
+... Procrustes: rmse 0.06230543  max resid 0.09691084 
+Run 8 stress 9.926535e-05 
+... Procrustes: rmse 0.06165909  max resid 0.1005196 
+Run 9 stress 9.725589e-05 
+... Procrustes: rmse 0.2683456  max resid 0.4114146 
+Run 10 stress 9.66827e-05 
+... Procrustes: rmse 0.1778812  max resid 0.2806731 
+Run 11 stress 8.406666e-05 
+... Procrustes: rmse 0.04711978  max resid 0.06316471 
+Run 12 stress 9.259858e-05 
+... Procrustes: rmse 0.2603827  max resid 0.3947313 
+Run 13 stress 0.000102759 
+... Procrustes: rmse 0.2823459  max resid 0.4921391 
+Run 14 stress 9.630233e-05 
+... Procrustes: rmse 0.09151013  max resid 0.1379625 
+Run 15 stress 9.710327e-05 
+... Procrustes: rmse 0.04966385  max resid 0.06469398 
+Run 16 stress 0.00126747 
+Run 17 stress 9.387538e-05 
+... Procrustes: rmse 0.1426553  max resid 0.1967929 
+Run 18 stress 0.001297242 
+Run 19 stress 9.685712e-05 
+... Procrustes: rmse 0.1344736  max resid 0.2819467 
+Run 20 stress 8.86192e-05 
+... Procrustes: rmse 0.06884409  max resid 0.08364656 
 *** Best solution was not repeated -- monoMDS stopping criteria:
-     7: no. of iterations &gt;= maxit
-    11: stress &lt; smin
-     2: stress ratio &gt; sratmax</code></pre>
+     5: no. of iterations &gt;= maxit
+    15: stress &lt; smin</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in vegan::metaMDS(counts(dds_genes, normalized = T) %&gt;% t()): stress is
