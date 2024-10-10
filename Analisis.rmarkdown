@@ -4,9 +4,11 @@ format: html
 editor: visual
 ---
 
+
 # RNASeq Report
 
 All the data of this analysis can be found in !(https://github.com/irycisBioinfo/ReportNavarraRNASeq)
+
 
 ```{r}
 library(DESeq2)
@@ -15,7 +17,9 @@ library(ggrepel)
 library(ggsci)
 ```
 
+
 # Load Data
+
 
 ```{r}
 
@@ -40,7 +44,9 @@ ttg <- biomaRt::getBM(
   mart = mart)
 ```
 
+
 # Transcript Level
+
 
 ```{r}
 table_sum <- reads_transcripts %>% 
@@ -71,7 +77,9 @@ dds_transcript <-DESeqDataSetFromMatrix(countData = table_counts,
 dds_transcript <- DESeq(dds_transcript,sfType = "poscounts", fitType = "mean")
 ```
 
+
 ## Quality Control
+
 
 ```{r}
 reads_transcripts %>% pivot_longer(names_to = "Sample", values_to = "counts", -(tx:gene_id)) %>% 
@@ -103,7 +111,9 @@ mds$points %>%
 
 ```
 
+
 ## Differential Expression Test
+
 
 ```{r}
 resultsNames(dds_transcript)
@@ -155,7 +165,9 @@ counts(dds_transcript, normalized = T) %>%
   ggplot(aes(x = Grupo, y = counts, fill = Grupo)) + geom_boxplot() + facet_wrap(~tx, scales = "free_y") + scale_fill_d3() + theme_light()
 ```
 
+
 ## Funtional Annotation
+
 
 ```{r}
 library(clusterProfiler)
@@ -198,7 +210,9 @@ if ((KEGG_enrichment %>% as.data.frame() %>% nrow()) > 0  )
 }
 ```
 
+
 # Gene Level
+
 
 ```{r}
 table_sum <- reads_genes %>% 
@@ -229,7 +243,9 @@ dds_genes <-DESeqDataSetFromMatrix(countData = table_counts,
 dds_genes <- DESeq(dds_genes,sfType = "poscounts", fitType = "mean")
 ```
 
+
 ## Quality Control
+
 
 ```{r}
 reads_genes %>% pivot_longer(names_to = "Sample", values_to = "counts", -(gene_id:gene_name)) %>% 
@@ -261,7 +277,9 @@ pca$points %>%
 
 ```
 
+
 ## Differential Expression Test
+
 
 ```{r}
 resultsNames(dds_genes)
@@ -312,3 +330,4 @@ counts(dds_genes, normalized = T) %>%
   inner_join(metadata) %>% 
   ggplot(aes(x = Grupo, y = counts, fill = Grupo)) + geom_boxplot() + facet_wrap(~Gene_Name, scales = "free_y") + scale_fill_d3() + theme_light()
 ```
+
