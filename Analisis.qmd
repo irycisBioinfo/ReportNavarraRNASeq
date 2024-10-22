@@ -7,6 +7,8 @@ format:
 editor: visual
 ---
 
+<https://irycisbioinfo.github.io/ReportNavarraRNASeq/>
+
 # RNASeq Report
 
 All the data of this analysis can be found in <https://github.com/irycisBioinfo/ReportNavarraRNASeq>
@@ -19,6 +21,8 @@ library(ggsci)
 ```
 
 # Load Data
+
+Data from primary analisis workflow <https://nf-co.re/rnaseq/3.14.0/> are loaded among metadata.
 
 ```{r message=FALSE, warning=FALSE}
 
@@ -43,11 +47,15 @@ ttg <- biomaRt::getBM(
   mart = mart)
 ```
 
+Quality Control from the primary analysis could be found <https://irycisbioinfo.github.io/ReportNavarraRNASeq/multiqc/star_salmon/multiqc_report.html>
+
+The analysis workflow aligns the reads to the reference genome's transcripts. This allows us to perform analysis at two levels: the transcript level and the gene level, which provides a summary of all transcripts associated with each gene.
+
 # Transcript Level
 
+Preparing data format
 
-
-```{r}
+```{r warning=FALSE, message=FALSE}
 table_sum <- reads_transcripts %>% 
   pivot_longer(names_to = "Sample", values_to = "counts", -(tx:gene_id)) %>% 
   group_by(tx,gene_id) %>% 
@@ -56,17 +64,25 @@ table_sum <- reads_transcripts %>%
   
 table_sum %>% ggplot(aes(x = TotalGeneCounts)) + geom_histogram() + geom_vline(xintercept = 10)+scale_x_log10()
 
-table_counts <- table_sum %>% 
+```
+
+Seen the distribution of the read counts we decide to filter those transcript with less than 10 reads or that are 0 in more than 3 samples.
+
+```{r}
+
+table_counts <- table_sum %>%
   ungroup() %>% 
   filter(TotalGeneCounts > 10) %>% 
   filter(TotalZerosCounts < 3) %>% 
-  select(tx,Sample,counts) %>% 
+  dplyr::select(tx,Sample,counts) %>% 
   pivot_wider(names_from = Sample, values_from = counts, values_fill = 0) %>% 
   column_to_rownames("tx") %>% 
   round() %>% 
   as.matrix()
 
 ```
+
+Creating a regression model and performing Differential Expression Analysis
 
 ```{r}
 dds_transcript <-DESeqDataSetFromMatrix(countData = table_counts, 
@@ -77,6 +93,8 @@ dds_transcript <- DESeq(dds_transcript,sfType = "poscounts", fitType = "mean")
 ```
 
 ## Quality Control
+
+Check the normalization and DE results
 
 ```{r}
 reads_transcripts %>% pivot_longer(names_to = "Sample", values_to = "counts", -(tx:gene_id)) %>% 
@@ -108,6 +126,8 @@ mds$points %>%
 
 ```
 
+The X Group seens more heteregenous than the group P. This get worse the quality of the Differential Expression Test.
+
 ## Differential Expression Test
 
 ```{r}
@@ -125,7 +145,7 @@ de_test%>%
              size = sqrt(baseMean), 
              label = label)) +
   geom_point(alpha = 0.5) +
-  geom_text_repel(size = 1)+
+  geom_text_repel(size = 2)+
   scale_color_d3() +
   theme_light() + 
   labs(title = "Volcano Plot Grupo_X_vs_P") 
@@ -147,6 +167,8 @@ de_test%>%
   labs(title = "MA Plot Grupo_X_vs_P")
 ```
 
+Volcano and MA plot shown several transcript differential expressed. In order to see better this differences we plot all the comparison individually.
+
 ```{r fig.width=20, fig.height=20}
 significativos <- de_test%>% 
   filter(padj < 0.005) %>% pull(Transcrip_ID)
@@ -161,6 +183,8 @@ counts(dds_transcript, normalized = T) %>%
 ```
 
 ## Funtional Annotation
+
+To create a biological context for the differential expressed transcript we are traying to infer if there are some funtional annotation (GO Terms) or pathway (KEGG) over-represented in the transcript-set.
 
 ```{r}
 library(clusterProfiler)
@@ -203,7 +227,11 @@ if ((KEGG_enrichment %>% as.data.frame() %>% nrow()) > 0  )
 }
 ```
 
+There are not over-represented funtional annotation or pathway.
+
 # Gene Level
+
+At this point we repeat de analysis but at Gene Level.
 
 ```{r}
 table_sum <- reads_genes %>% 
@@ -225,6 +253,8 @@ table_counts <- table_sum %>%
   as.matrix()
 
 ```
+
+We use the same criteria to filter low quality genes.
 
 ```{r}
 dds_genes <-DESeqDataSetFromMatrix(countData = table_counts, 
@@ -265,6 +295,8 @@ pca$points %>%
   theme_light()
 
 ```
+
+We obtain the same results at heterogeneity level of the samples.
 
 ## Differential Expression Test
 
@@ -317,3 +349,5 @@ counts(dds_genes, normalized = T) %>%
   inner_join(metadata) %>% 
   ggplot(aes(x = Grupo, y = counts, fill = Grupo)) + geom_boxplot() + facet_wrap(~Gene_Name, scales = "free_y") + scale_fill_d3() + theme_light()
 ```
+
+In this case we only see two genes deferentially expresed.
