@@ -11,7 +11,7 @@ editor: visual
 
 All the data of this analysis can be found in <https://github.com/irycisBioinfo/ReportNavarraRNASeq>
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(DESeq2)
 library(tidyverse)
 library(ggrepel)
@@ -20,7 +20,7 @@ library(ggsci)
 
 # Load Data
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 
 reads_genes <- read_tsv("/storage2/Hincode/S-60-47-61-2024-RNASeq_0240725_LH00206_0043_A22MLN2LT3/navarra/results_strand/star_salmon/salmon.merged.gene_counts_length_scaled.tsv")
 
