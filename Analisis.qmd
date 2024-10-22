@@ -1,12 +1,15 @@
 ---
 title: "RNASeq Navarra"
-format: html
+format:
+  html:
+    toc: true
+    toc-location: left
 editor: visual
 ---
 
 # RNASeq Report
 
-All the data of this analysis can be found in !(https://github.com/irycisBioinfo/ReportNavarraRNASeq)
+All the data of this analysis can be found in <https://github.com/irycisBioinfo/ReportNavarraRNASeq>
 
 ```{r}
 library(DESeq2)
@@ -41,6 +44,8 @@ ttg <- biomaRt::getBM(
 ```
 
 # Transcript Level
+
+
 
 ```{r}
 table_sum <- reads_transcripts %>% 
